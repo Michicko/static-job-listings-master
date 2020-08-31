@@ -105,10 +105,7 @@ function filterJobList() {
                 job.style.display = 'none';
             }
         });
-    });
-    if (!filterCont.firstElementChild) {
-        getJob();
-    }
+    });    
 }
 
 // clear search bar and filter list
@@ -116,8 +113,7 @@ function clearFilter(e) {
     while (filterCont.firstElementChild) {
         filterCont.removeChild(filterCont.firstElementChild);
     }
-    searchBar.style.display = 'none';
-    getJob();
+    window.location.reload();
     e.preventDefault();
 }
 
@@ -129,7 +125,7 @@ function removeFilterItem(e) {
     }
 
     if (!filterCont.firstElementChild) {
-        searchBar.style.display = 'none';
+        window.location.reload();
     }
 }
 
